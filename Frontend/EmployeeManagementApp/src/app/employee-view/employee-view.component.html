@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2 >View Employee</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-right">
+          <a routerLink="/Employee" class="btn btn-secondary">Employee List</a>
+        </div>
+    </div>
+    <br/>
+    <form>
+      <div *ngIf="employee">
+        <div class="form-group row">
+          <label for="txtEmployeeName" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" readonly [(ngModel)]="employee.name" name="name" id="EmployeeName" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="txtPosition" class="col-sm-2 col-form-label">Position</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" readonly [(ngModel)]="employee.position" name="position" id="txtPosition" />
+        </div>
+        </div>
+        <div class="form-group row">
+            <label for="txtDepartment" class="col-sm-2 col-form-label">Department</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" readonly [(ngModel)]="employee.department" name="department" id="txtDepartment"/>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="txtSalary" class="col-sm-2 col-form-label">Salary</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" readonly [(ngModel)]="employee.salary" name="salary" id="txtSalary"/>
+            </div>
+          </div>
+        </div>
+      </form>
+<div>

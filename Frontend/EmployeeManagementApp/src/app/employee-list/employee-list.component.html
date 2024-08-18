@@ -1,0 +1,44 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12 text-center">
+    <h2 >Employee List</h2>
+    </div>
+    </div>
+    
+    <div class="row">
+    <div class="col-md-12 text-right">
+      <!--<button type="button" class="btn btn-secondary">Add New Employee</button>-->
+      <a routerLink="/Employee/Create" class="btn btn-secondary">Add New Employee</a>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th class="d-none">Id</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of Employees">
+                <td class="d-none">{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.position}}</td>
+                <td>{{item.department}}</td>
+                <td>{{item.salary}}</td>
+                <td><div class="text-center">
+                    <a [routerLink]="['/Employee/View', item.id]" class="btn-sm btn-primary">View</a>&nbsp;
+                    <a [routerLink]="['/Employee/Edit', item.id]"  class="btn-sm btn-success">Edit</a>&nbsp;
+                    <button type="button" (click)="confirmDelete($event,item.id)" class="btn-sm btn-danger">Delete</button>
+                </div></td>
+            </tr>
+        </tbody>
+    </table>
+
+    </div>
+</div>
